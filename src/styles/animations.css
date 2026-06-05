@@ -1,0 +1,45 @@
+/*
+ * animations.css — All keyframes in one place.
+ * Components reference these animation names directly in their own CSS.
+ */
+
+@keyframes blobFloat1 {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-18px) scale(1.04); }
+}
+
+@keyframes blobFloat2 {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(14px); }
+}
+
+@keyframes illusFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-14px); }
+}
+
+@keyframes sqSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Utility animation classes — apply these on any element */
+.anim-slide-left  { animation: slideInLeft  0.65s cubic-bezier(0.25, 0.8, 0.25, 1) both; }
+.anim-slide-right { animation: slideInRight 0.65s cubic-bezier(0.25, 0.8, 0.25, 1) both; }
+.anim-slide-up    { animation: slideUp 0.6s both; }
+.anim-illus-float { animation: illusFloat 4s ease-in-out infinite; }

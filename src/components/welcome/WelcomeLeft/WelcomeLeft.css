@@ -1,0 +1,93 @@
+/*
+ * WelcomeLeft.css — Pink gradient panel with animated blobs and CTA text.
+ */
+
+.welcome-left {
+  flex: 1;
+  background: var(--gradient-primary);
+  padding: var(--panel-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card) 0 0 var(--radius-card);
+}
+
+/* Floating blobs */
+.welcome-left__blob {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--color-blob);
+  pointer-events: none;
+}
+.welcome-left__blob--1 {
+  width: 260px; height: 260px;
+  bottom: -80px; left: -60px;
+  animation: blobFloat1 7s ease-in-out infinite;
+}
+.welcome-left__blob--2 {
+  width: 140px; height: 140px;
+  top: 10px; right: -20px;
+  animation: blobFloat2 5s ease-in-out infinite;
+}
+.welcome-left__blob--3 {
+  width: 90px; height: 90px;
+  bottom: 60px; right: 80px;
+  animation: blobFloat1 9s ease-in-out infinite 1.5s;
+}
+.welcome-left__blob--4 {
+  width: 50px; height: 50px;
+  top: 100px; left: 40px;
+  animation: blobFloat2 6s ease-in-out infinite 0.8s;
+}
+
+/* Logo fixed to top-left */
+.welcome-left__logo {
+  position: absolute;
+  top: 28px;
+  left: 32px;
+}
+
+/* Content block at bottom */
+.welcome-left__content {
+  position: relative;
+  z-index: 2;
+}
+
+.welcome-left__title {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--color-text-white);
+  line-height: 1.15;
+  margin-bottom: 12px;
+  animation: slideUp 0.7s 0.2s both;
+}
+
+.welcome-left__subtitle {
+  font-size: 13px;
+  color: var(--color-text-white-85);
+  line-height: 1.6;
+  margin-bottom: 28px;
+  animation: slideUp 0.7s 0.35s both;
+}
+
+.welcome-left__btn {
+  display: inline-block;
+  padding: 11px 36px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: var(--radius-btn);
+  color: var(--color-text-white);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  background: transparent;
+  font-family: var(--font-family);
+  transition: background 0.25s, transform 0.25s;
+  animation: slideUp 0.7s 0.5s both;
+}
+.welcome-left__btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}

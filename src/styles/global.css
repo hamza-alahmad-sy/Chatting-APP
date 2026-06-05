@@ -1,0 +1,54 @@
+/*
+ * global.css — Resets, font import, and the outermost page shell.
+ * Imported once in index.js; never import in individual components.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import './variables.css';
+@import './animations.css';
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--color-bg-page);
+  min-height: 100vh;
+}
+
+/* Page wrapper — centers the auth card */
+.page-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  background: var(--color-bg-page);
+}
+
+/* Decorative background arcs (positioned in AuthPage) */
+.bg-arc {
+  position: absolute;
+  border-radius: 50%;
+  border: 60px solid var(--color-arc-border);
+  pointer-events: none;
+}
+.bg-arc--top-left  { width: 340px; height: 340px; top: -120px; left: -120px; }
+.bg-arc--bot-right { width: 220px; height: 220px; bottom: -60px; right: -40px; }
+
+/* The main white card */
+.auth-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-card);
+  width: 820px;
+  min-height: 480px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  z-index: 1;
+}

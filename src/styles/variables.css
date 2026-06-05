@@ -1,0 +1,56 @@
+/*
+ * Design Tokens — single source of truth for all colors, spacing, and typography.
+ * Import this file first in any CSS that needs brand values.
+ */
+
+:root {
+  /* Brand colors */
+  --color-primary:        #e8306e;
+  --color-primary-light:  #f472a8;
+  --color-primary-dark:   #b01850;
+  --color-primary-mid:    #d42060;
+
+  /* Gradient presets */
+  --gradient-primary: linear-gradient(145deg, #f0306a 0%, #d42060 50%, #b01850 100%);
+  --gradient-btn:     linear-gradient(90deg, #e8306e, #f472a8);
+
+  /* Backgrounds */
+  --color-bg-page:   #ede9f5;
+  --color-bg-card:   #ffffff;
+  --color-bg-right:  #f5f2fa;
+  --color-bg-input:  #f2f2f2;
+
+  /* Social */
+  --color-facebook: #1877f2;
+  --color-google:   #ea4335;
+  --color-twitter:  #1da1f2;
+
+  /* Text */
+  --color-text-primary:  #333333;
+  --color-text-muted:    #aaaaaa;
+  --color-text-white:    #ffffff;
+  --color-text-white-85: rgba(255,255,255,0.85);
+
+  /* Decorative */
+  --color-arc-border: rgba(180,160,220,0.18);
+  --color-blob:       rgba(255,255,255,0.12);
+  --color-deco-sq:    rgba(180,150,220,0.15);
+  --color-sr-deco:    rgba(255,255,255,0.12);
+
+  /* Shadows */
+  --shadow-card: 0 24px 80px rgba(160,100,180,0.13);
+  --shadow-btn:  0 10px 24px rgba(232,48,110,0.38);
+  --shadow-tab:  0 2px 8px rgba(0,0,0,0.09);
+
+  /* Radius */
+  --radius-card:  24px;
+  --radius-btn:   30px;
+  --radius-input: 30px;
+  --radius-tab:   28px;
+
+  /* Typography */
+  --font-family: 'Poppins', sans-serif;
+
+  /* Panel padding */
+  --panel-padding: 36px 40px;
+}

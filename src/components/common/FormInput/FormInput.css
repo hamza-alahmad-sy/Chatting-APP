@@ -1,0 +1,49 @@
+/*
+ * FormInput.css — Pill-shaped input with leading icon.
+ */
+
+.form-input {
+  position: relative;
+  margin-bottom: 12px;
+  animation: slideUp 0.6s both;
+}
+
+.form-input__icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.form-input__field {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  border: none;
+  background: var(--color-bg-input);
+  border-radius: var(--radius-input);
+  font-size: 13px;
+  font-family: var(--font-family);
+  outline: none;
+  color: var(--color-text-primary);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.form-input__field:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(232, 48, 110, 0.33);
+}
+
+/* Error state */
+.form-input--error .form-input__field {
+  box-shadow: 0 0 0 2px rgba(232, 48, 110, 0.6);
+}
+
+.form-input__error-msg {
+  font-size: 10px;
+  color: var(--color-primary);
+  margin-top: 4px;
+  padding-left: 14px;
+}

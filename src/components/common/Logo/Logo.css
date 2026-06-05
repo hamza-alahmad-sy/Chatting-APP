@@ -1,0 +1,45 @@
+/*
+ * Logo.css — Styles for the Logo component.
+ * Two variants: --light (white, for use on colored backgrounds)
+ *               --dark  (pink, for use on white backgrounds)
+ */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo__text {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Light variant — for colored (pink) backgrounds */
+.logo--light .logo__icon {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+.logo--light .logo__text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Dark variant — for white backgrounds */
+.logo--dark .logo__icon {
+  background: linear-gradient(135deg, #f0306a, #f472a8);
+  color: #fff;
+}
+.logo--dark .logo__text {
+  color: var(--color-primary);
+}
