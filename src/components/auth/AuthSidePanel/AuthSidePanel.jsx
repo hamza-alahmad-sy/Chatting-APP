@@ -6,7 +6,7 @@
  */
 
 import './AuthSidePanel.css';
-import { ClapperIllus } from '../../illustrations';
+import { ChatSideIllus } from '../../illustrations';
 import { TAB_CONTENT } from '../../../constants';
 
 export default function AuthSidePanel({ tab, animKey }) {
@@ -23,7 +23,7 @@ export default function AuthSidePanel({ tab, animKey }) {
       <p  className="auth-side-panel__subtitle">{sideSub}</p>
 
       <div className="auth-side-panel__illus">
-        <ClapperIllus />
+        <ChatSideIllus />
       </div>
     </div>
   );

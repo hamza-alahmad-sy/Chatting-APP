@@ -6,7 +6,7 @@
  */
 
 import './WelcomeRight.css';
-import { MagicianIllus } from '../../illustrations';
+import { ChatIllus } from '../../illustrations';
 
 export default function WelcomeRight() {
   return (
@@ -16,7 +16,7 @@ export default function WelcomeRight() {
       <div className="welcome-right__deco welcome-right__deco--3" />
 
       <div className="welcome-right__illus">
-        <MagicianIllus />
+        <ChatIllus />
       </div>
     </div>
   );

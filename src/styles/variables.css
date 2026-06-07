@@ -5,20 +5,20 @@
 
 :root {
   /* Brand colors */
-  --color-primary:        #e8306e;
-  --color-primary-light:  #f472a8;
-  --color-primary-dark:   #b01850;
-  --color-primary-mid:    #d42060;
+  --color-primary:        #14b8a6;
+  --color-primary-light:  #2dd4bf;
+  --color-primary-dark:   #0f766e;
+  --color-primary-mid:    #0d9488;
 
   /* Gradient presets */
-  --gradient-primary: linear-gradient(145deg, #f0306a 0%, #d42060 50%, #b01850 100%);
-  --gradient-btn:     linear-gradient(90deg, #e8306e, #f472a8);
+  --gradient-primary: linear-gradient(145deg, #2dd4bf 0%, #14b8a6 50%, #0f766e 100%);
+  --gradient-btn:     linear-gradient(90deg, #14b8a6, #2dd4bf);
 
   /* Backgrounds */
-  --color-bg-page:   #ede9f5;
-  --color-bg-card:   #ffffff;
-  --color-bg-right:  #f5f2fa;
-  --color-bg-input:  #f2f2f2;
+  --color-bg-page:   #0f172a;
+  --color-bg-card:   #1e293b;
+  --color-bg-right:  #172033;
+  --color-bg-input:  #273449;
 
   /* Social */
   --color-facebook: #1877f2;
@@ -26,8 +26,8 @@
   --color-twitter:  #1da1f2;
 
   /* Text */
-  --color-text-primary:  #333333;
-  --color-text-muted:    #aaaaaa;
+  --color-text-primary: #f8fafc;
+  --color-text-muted:   #94a3b8;
   --color-text-white:    #ffffff;
   --color-text-white-85: rgba(255,255,255,0.85);
 
