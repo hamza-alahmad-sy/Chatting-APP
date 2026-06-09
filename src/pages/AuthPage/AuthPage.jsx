@@ -16,10 +16,15 @@ import { SCREENS       } from '../../constants';
 
 import { WelcomeLeft, WelcomeRight } from '../../components/welcome';
 import { AuthForm, AuthSidePanel   } from '../../components/auth';
+import ChatPage from '../ChatPage/ChatPage';
 
 export default function AuthPage() {
-  const { screen, tab, animKey, goToAuth, switchTab } = useAuthScreen();
-  const { fields, errors, loading, handleChange, handleSubmit } = useAuthForm(tab);
+  const { screen, tab, animKey, goToAuth, switchTab, goToChat } = useAuthScreen();
+  const { fields, errors, loading, handleChange, handleSubmit } = useAuthForm(tab, goToChat);
+
+  if (screen === SCREENS.CHAT) {
+    return <ChatPage />;
+  }
 
   return (
     <div className="page-root">

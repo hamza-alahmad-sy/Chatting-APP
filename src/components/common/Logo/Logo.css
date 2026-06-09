@@ -27,19 +27,19 @@
 }
 
 /* Light variant — for colored (pink) backgrounds */
-.logo--light .logo__icon {
+.logo__icon {
   background: rgba(255, 255, 255, 0.25);
   color: #fff;
 }
-.logo--light .logo__text {
+ .logo__text {
   color: rgba(255, 255, 255, 0.9);
 }
 
 /* Dark variant — for white backgrounds */
-.logo--dark .logo__icon {
+.logo__icon {
   background: linear-gradient(135deg, #f0306a, #f472a8);
   color: #fff;
 }
-.logo--dark .logo__text {
+ .logo__text {
   color: var(--color-primary);
 }

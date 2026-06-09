@@ -15,7 +15,7 @@ const INITIAL_FIELDS = {
   password: '',
 };
 
-export function useAuthForm(tab) {
+export function useAuthForm(tab, onSuccess) {
   const [fields, setFields]   = useState(INITIAL_FIELDS);
   const [errors, setErrors]   = useState({});
   const [loading, setLoading] = useState(false);
@@ -61,11 +61,11 @@ export function useAuthForm(tab) {
     try {
       // TODO: replace with authService.signIn(fields) or authService.signUp(fields)
       await new Promise(r => setTimeout(r, 800)); // simulated network delay
-      console.log(`[${tab}] submitted:`, fields);
+      onSuccess?.();
     } finally {
       setLoading(false);
     }
-  }, [fields, tab, validate]);
+  }, [fields, tab, validate, onSuccess]);
 
   return { fields, errors, loading, handleChange, handleSubmit };
 }

@@ -28,5 +28,11 @@ export function useAuthScreen() {
     setAnimKey(k => k + 1);
   }, []);
 
-  return { screen, tab, animKey, goToAuth, switchTab };
+  /** Navigate to the main chat page after successful auth */
+  const goToChat = useCallback(() => {
+    setScreen(SCREENS.CHAT);
+    setAnimKey(k => k + 1);
+  }, []);
+
+  return { screen, tab, animKey, goToAuth, switchTab, goToChat };
 }

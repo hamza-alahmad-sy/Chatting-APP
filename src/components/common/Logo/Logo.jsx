@@ -13,9 +13,9 @@ export default function Logo({ variant = 'dark', className = '' }) {
   return (
     <div className={`logo logo--${variant} ${className}`}>
       <div className="logo__icon">
-        <ReelIcon stroke={variant === 'light' ? '#fff' : '#fff'} size={15} />
+        <ReelIcon stroke={variant === 'light' ? '#fff' : '#fff'} size={20} />
       </div>
-      <span className="logo__text">Layer Tancap</span>
+      <span className="logo__text">Chat App</span>
     </div>
   );
 }
