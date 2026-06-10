@@ -20,7 +20,7 @@ import ChatPage from '../ChatPage/ChatPage';
 
 export default function AuthPage() {
   const { screen, tab, animKey, goToAuth, switchTab, goToChat } = useAuthScreen();
-  const { fields, errors, loading, handleChange, handleSubmit } = useAuthForm(tab, goToChat);
+  const { fields, errors, submitError, loading, handleChange, handleSubmit } = useAuthForm(tab, goToChat);
 
   if (screen === SCREENS.CHAT) {
     return <ChatPage />;
@@ -52,6 +52,7 @@ export default function AuthPage() {
               onTabSwitch={switchTab}
               fields={fields}
               errors={errors}
+              submitError={submitError}
               loading={loading}
               onChange={handleChange}
               onSubmit={handleSubmit}

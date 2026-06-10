@@ -11,7 +11,7 @@ import { FormInput } from '../../common';
 import { UserIcon, EmailIcon, LockIcon } from '../icons';
 import { STRINGS, TAB_CONTENT, AUTH_TABS } from '../../../constants';
 
-export default function SignUpForm({ fields, errors, loading, onChange, onSubmit }) {
+export default function SignUpForm({ fields, errors, submitError, loading, onChange, onSubmit }) {
   const { actionBtn } = TAB_CONTENT[AUTH_TABS.SIGN_UP];
 
   return (
@@ -46,6 +46,8 @@ export default function SignUpForm({ fields, errors, loading, onChange, onSubmit
         error={errors.password}
         icon={<LockIcon />}
       />
+
+      {submitError && <p className="auth-form__submit-error">{submitError}</p>}
 
       <button className="auth-form__submit-btn" onClick={onSubmit} disabled={loading} type="button">
         {loading ? STRINGS.auth.creating : actionBtn}

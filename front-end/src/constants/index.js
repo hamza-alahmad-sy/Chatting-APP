@@ -50,6 +50,9 @@ export const STRINGS = {
     emailInvalid: 'أدخل بريداً إلكترونياً صالحاً',
     passwordRequired: 'كلمة المرور مطلوبة',
     passwordMin: 'ستة أحرف على الأقل',
+    invalidCredentials: 'البريد الإلكتروني أو كلمة المرور غير صحيحين',
+    authFailed: 'حدث خطأ أثناء تسجيل الدخول، حاول مرة أخرى',
+    registrationFailed: 'فشل إنشاء الحساب، حاول مرة أخرى',
   },
 };
 

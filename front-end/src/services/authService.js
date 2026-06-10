@@ -10,12 +10,23 @@ import api from './api';
 const BASE_URL = process.env.REACT_APP_API_URL || 'https://api.example.com';
 
 /**
- * Sign in an existing user.
- * @param {{ userName: string, password: string }} credentials
- * @returns {Promise<{ token: string, user: object }>}
+ * Extract a readable message from an axios / API error.
  */
-export async function signIn({ userName, password }) {
-  const response = await api.post('/auth/login', { userName, password });
+export function getAuthErrorMessage(error, fallback) {
+  const data = error.response?.data;
+  if (typeof data === 'string' && data.trim()) return data;
+  if (data?.message) return data.message;
+  if (data?.title) return data.title;
+  return fallback;
+}
+
+/**
+ * Sign in an existing user.
+ * @param {{ email: string, password: string }} credentials
+ * @returns {Promise<{ token?: string, user?: object }>}
+ */
+export async function signIn({ email, password }) {
+  const response = await api.post('/auth/login', { userName: email, password });
   return response.data;
 }
 

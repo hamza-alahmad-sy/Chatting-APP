@@ -14,7 +14,7 @@ import SignInForm from '../SignInForm/SignInForm';
 import SignUpForm from '../SignUpForm/SignUpForm';
 import { AUTH_TABS, TAB_CONTENT, STRINGS } from '../../../constants';
 
-export default function AuthForm({ tab, animKey, onTabSwitch, fields, errors, loading, onChange, onSubmit }) {
+export default function AuthForm({ tab, animKey, onTabSwitch, fields, errors, submitError, loading, onChange, onSubmit }) {
   const { formTitle } = TAB_CONTENT[tab];
   const isSignIn = tab === AUTH_TABS.SIGN_IN;
 
@@ -52,8 +52,8 @@ export default function AuthForm({ tab, animKey, onTabSwitch, fields, errors, lo
 
       {/* Tab-specific fields */}
       {isSignIn
-        ? <SignInForm fields={fields} errors={errors} loading={loading} onChange={onChange} onSubmit={onSubmit} />
-        : <SignUpForm fields={fields} errors={errors} loading={loading} onChange={onChange} onSubmit={onSubmit} />
+        ? <SignInForm fields={fields} errors={errors} submitError={submitError} loading={loading} onChange={onChange} onSubmit={onSubmit} />
+        : <SignUpForm fields={fields} errors={errors} submitError={submitError} loading={loading} onChange={onChange} onSubmit={onSubmit} />
       }
     </div>
   );

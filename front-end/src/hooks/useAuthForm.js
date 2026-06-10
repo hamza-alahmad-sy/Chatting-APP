@@ -8,7 +8,7 @@
 
 import { useState, useCallback } from 'react';
 import { AUTH_TABS, STRINGS } from '../constants';
-import { signIn, signUp } from '../services/authService';
+import { signIn, signUp, getAuthErrorMessage } from '../services/authService';
 
 const INITIAL_FIELDS = {
   name:     '',
@@ -17,14 +17,16 @@ const INITIAL_FIELDS = {
 };
 
 export function useAuthForm(tab, onSuccess) {
-  const [fields, setFields]   = useState(INITIAL_FIELDS);
-  const [errors, setErrors]   = useState({});
-  const [loading, setLoading] = useState(false);
+  const [fields, setFields]         = useState(INITIAL_FIELDS);
+  const [errors, setErrors]         = useState({});
+  const [submitError, setSubmitError] = useState('');
+  const [loading, setLoading]       = useState(false);
 
   /** Generic field change handler — pass directly to input onChange */
   const handleChange = useCallback((e) => {
     const { name, value } = e.target;
     setFields(prev => ({ ...prev, [name]: value }));
+    setSubmitError('');
     // Clear the error for this field as soon as the user starts typing
     if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
   }, [errors]);
@@ -58,18 +60,27 @@ export function useAuthForm(tab, onSuccess) {
       setErrors(validationErrors);
       return;
     }
+    setSubmitError('');
     setLoading(true);
     try {
       if (tab === AUTH_TABS.SIGN_IN) {
-        await signIn({ userName: fields.email, password: fields.password });
+        const data = await signIn({ email: fields.email, password: fields.password });
+        if (data?.token) localStorage.setItem('token', data.token);
+        onSuccess?.();
       } else {
-        await signUp({ name: fields.name, email: fields.email, password: fields.password });
+        const data = await signUp({ name: fields.name, email: fields.email, password: fields.password });
+        if (data?.token) localStorage.setItem('token', data.token);
+        onSuccess?.();
       }
-      onSuccess?.();
+    } catch (error) {
+      const fallback = tab === AUTH_TABS.SIGN_IN
+        ? STRINGS.validation.invalidCredentials
+        : STRINGS.validation.registrationFailed;
+      setSubmitError(getAuthErrorMessage(error, fallback));
     } finally {
       setLoading(false);
     }
   }, [fields, tab, validate, onSuccess]);
 
-  return { fields, errors, loading, handleChange, handleSubmit };
+  return { fields, errors, submitError, loading, handleChange, handleSubmit };
 }

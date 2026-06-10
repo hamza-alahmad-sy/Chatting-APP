@@ -12,7 +12,7 @@ import { FormInput } from '../../common';
 import { EmailIcon, LockIcon } from '../icons';
 import { STRINGS, TAB_CONTENT, AUTH_TABS } from '../../../constants';
 
-export default function SignInForm({ fields, errors, loading, onChange, onSubmit }) {
+export default function SignInForm({ fields, errors, submitError, loading, onChange, onSubmit }) {
   const { actionBtn } = TAB_CONTENT[AUTH_TABS.SIGN_IN];
 
   return (
@@ -38,6 +38,8 @@ export default function SignInForm({ fields, errors, loading, onChange, onSubmit
       />
 
       <p className="auth-form__forgot">{STRINGS.auth.forgotPassword}</p>
+
+      {submitError && <p className="auth-form__submit-error">{submitError}</p>}
 
       <button className="auth-form__submit-btn" onClick={onSubmit} disabled={loading} type="button">
         {loading ? STRINGS.auth.signingIn : actionBtn}
