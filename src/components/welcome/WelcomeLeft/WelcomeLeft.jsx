@@ -7,6 +7,7 @@
 
 import './WelcomeLeft.css';
 import { Logo } from '../../common';
+import { STRINGS } from '../../../constants';
 
 export default function WelcomeLeft({ onSignInClick }) {
   return (
@@ -23,13 +24,13 @@ export default function WelcomeLeft({ onSignInClick }) {
       {/* CTA content pinned to bottom */}
       <div className="welcome-left__content">
         <h1 className="welcome-left__title">
-          Welcome<br />Back
+          {STRINGS.welcome.titleLine1}<br />{STRINGS.welcome.titleLine2}
         </h1>
         <p className="welcome-left__subtitle">
-          To keep connected with us please<br />login with your personal info
+          {STRINGS.welcome.subtitle}
         </p>
         <button className="welcome-left__btn" onClick={onSignInClick} type="button">
-          SIGN IN
+          {STRINGS.welcome.signIn}
         </button>
       </div>
     </div>

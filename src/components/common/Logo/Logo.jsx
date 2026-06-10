@@ -8,6 +8,7 @@
 
 import './Logo.css';
 import { ReelIcon } from '../../illustrations';
+import { APP_NAME } from '../../../constants';
 
 export default function Logo({ variant = 'dark', className = '' }) {
   return (
@@ -15,7 +16,7 @@ export default function Logo({ variant = 'dark', className = '' }) {
       <div className="logo__icon">
         <ReelIcon stroke={variant === 'light' ? '#fff' : '#fff'} size={20} />
       </div>
-      <span className="logo__text">Chat App</span>
+      <span className="logo__text">{APP_NAME}</span>
     </div>
   );
 }

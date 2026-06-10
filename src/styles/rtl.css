@@ -1,0 +1,75 @@
+/*
+ * rtl.css — Layout adjustments for Arabic (RTL) direction.
+ */
+
+[dir="rtl"] .welcome-left {
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
+}
+
+[dir="rtl"] .welcome-left__logo {
+  left: auto;
+  right: 32px;
+}
+
+[dir="rtl"] .auth-form {
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
+}
+
+[dir="rtl"] .auth-side-panel {
+  border-radius: var(--radius-card) 0 0 var(--radius-card);
+}
+
+[dir="rtl"] .form-input__icon {
+  left: auto;
+  right: 14px;
+}
+
+[dir="rtl"] .form-input__field {
+  padding: 12px 40px 12px 14px;
+}
+
+[dir="rtl"] .form-input__error-msg {
+  padding-left: 0;
+  padding-right: 14px;
+}
+
+[dir="rtl"] .user-list {
+  border-right: none;
+  border-left: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+[dir="rtl"] .user-list__search-icon {
+  left: auto;
+  right: 28px;
+}
+
+[dir="rtl"] .user-list__search {
+  padding: 10px 38px 10px 14px;
+}
+
+[dir="rtl"] .user-list__item {
+  text-align: right;
+}
+
+[dir="rtl"] .user-list__item--active {
+  border-left: none;
+  border-right: 3px solid var(--color-primary);
+}
+
+[dir="rtl"] .chat-window__bubble--them {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 4px;
+}
+
+[dir="rtl"] .chat-window__bubble--me {
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 4px;
+}
+
+[dir="rtl"] .chat-window__msg-time {
+  text-align: left;
+}
+
+[dir="rtl"] .chat-window__send-btn svg {
+  transform: scaleX(-1);
+}

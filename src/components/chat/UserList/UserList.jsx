@@ -4,6 +4,7 @@
 
 import './UserList.css';
 import { Logo } from '../../common';
+import { STRINGS } from '../../../constants';
 
 export default function UserList({
   users,
@@ -16,7 +17,7 @@ export default function UserList({
     <aside className="user-list">
       <div className="user-list__header">
         <Logo variant="dark" className="user-list__logo" />
-        <h2 className="user-list__title">Messages</h2>
+        <h2 className="user-list__title">{STRINGS.chat.messages}</h2>
       </div>
 
       <div className="user-list__search-wrap">
@@ -27,7 +28,7 @@ export default function UserList({
         <input
           type="text"
           className="user-list__search"
-          placeholder="Search users..."
+          placeholder={STRINGS.chat.searchUsers}
           value={searchQuery}
           onChange={e => onSearchChange(e.target.value)}
         />

@@ -12,7 +12,7 @@ import './AuthForm.css';
 import { Logo, SocialButtons } from '../../common';
 import SignInForm from '../SignInForm/SignInForm';
 import SignUpForm from '../SignUpForm/SignUpForm';
-import { AUTH_TABS, TAB_CONTENT } from '../../../constants';
+import { AUTH_TABS, TAB_CONTENT, STRINGS } from '../../../constants';
 
 export default function AuthForm({ tab, animKey, onTabSwitch, fields, errors, loading, onChange, onSubmit }) {
   const { formTitle } = TAB_CONTENT[tab];
@@ -31,14 +31,14 @@ export default function AuthForm({ tab, animKey, onTabSwitch, fields, errors, lo
           onClick={() => onTabSwitch(AUTH_TABS.SIGN_IN)}
           type="button"
         >
-          Sign In
+          {STRINGS.auth.signInTab}
         </button>
         <button
           className={`auth-form__tab ${!isSignIn ? 'auth-form__tab--active' : ''}`}
           onClick={() => onTabSwitch(AUTH_TABS.SIGN_UP)}
           type="button"
         >
-          Sign Up
+          {STRINGS.auth.signUpTab}
         </button>
       </div>
 
@@ -48,7 +48,7 @@ export default function AuthForm({ tab, animKey, onTabSwitch, fields, errors, lo
       {/* Social login */}
       <SocialButtons />
 
-      <p className="auth-form__divider">or use your email account:</p>
+      <p className="auth-form__divider">{STRINGS.auth.divider}</p>
 
       {/* Tab-specific fields */}
       {isSignIn

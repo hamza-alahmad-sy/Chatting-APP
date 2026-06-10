@@ -20,6 +20,9 @@ export default function ChatPage() {
     setDraft,
     selectUser,
     sendMessage,
+    loading,
+    sendingMessage,
+    retryMessage,
   } = useChat();
 
   return (
@@ -41,6 +44,9 @@ export default function ChatPage() {
           draft={draft}
           onDraftChange={setDraft}
           onSend={sendMessage}
+          loading={loading}
+          sendingMessage={sendingMessage}
+          onRetryMessage={retryMessage}
         />
       </div>
     </div>

@@ -7,7 +7,7 @@
  */
 
 import { useState, useCallback } from 'react';
-import { AUTH_TABS } from '../constants';
+import { AUTH_TABS, STRINGS } from '../constants';
 
 const INITIAL_FIELDS = {
   name:     '',
@@ -32,17 +32,17 @@ export function useAuthForm(tab, onSuccess) {
   const validate = useCallback(() => {
     const next = {};
     if (tab === AUTH_TABS.SIGN_UP && !fields.name.trim()) {
-      next.name = 'Name is required';
+      next.name = STRINGS.validation.nameRequired;
     }
     if (!fields.email.trim()) {
-      next.email = 'Email is required';
+      next.email = STRINGS.validation.emailRequired;
     } else if (!/\S+@\S+\.\S+/.test(fields.email)) {
-      next.email = 'Enter a valid email';
+      next.email = STRINGS.validation.emailInvalid;
     }
     if (!fields.password) {
-      next.password = 'Password is required';
+      next.password = STRINGS.validation.passwordRequired;
     } else if (fields.password.length < 6) {
-      next.password = 'At least 6 characters';
+      next.password = STRINGS.validation.passwordMin;
     }
     return next;
   }, [fields, tab]);

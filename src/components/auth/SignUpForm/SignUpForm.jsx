@@ -9,14 +9,17 @@
 
 import { FormInput } from '../../common';
 import { UserIcon, EmailIcon, LockIcon } from '../icons';
+import { STRINGS, TAB_CONTENT, AUTH_TABS } from '../../../constants';
 
 export default function SignUpForm({ fields, errors, loading, onChange, onSubmit }) {
+  const { actionBtn } = TAB_CONTENT[AUTH_TABS.SIGN_UP];
+
   return (
     <>
       <FormInput
         type="text"
         name="name"
-        placeholder="Full Name"
+        placeholder={STRINGS.auth.fullName}
         value={fields.name}
         onChange={onChange}
         error={errors.name}
@@ -27,7 +30,7 @@ export default function SignUpForm({ fields, errors, loading, onChange, onSubmit
       <FormInput
         type="email"
         name="email"
-        placeholder="Email"
+        placeholder={STRINGS.auth.email}
         value={fields.email}
         onChange={onChange}
         error={errors.email}
@@ -37,7 +40,7 @@ export default function SignUpForm({ fields, errors, loading, onChange, onSubmit
       <FormInput
         type="password"
         name="password"
-        placeholder="Password"
+        placeholder={STRINGS.auth.password}
         value={fields.password}
         onChange={onChange}
         error={errors.password}
@@ -45,7 +48,7 @@ export default function SignUpForm({ fields, errors, loading, onChange, onSubmit
       />
 
       <button className="auth-form__submit-btn" onClick={onSubmit} disabled={loading} type="button">
-        {loading ? 'CREATING…' : 'SIGN UP'}
+        {loading ? STRINGS.auth.creating : actionBtn}
       </button>
     </>
   );

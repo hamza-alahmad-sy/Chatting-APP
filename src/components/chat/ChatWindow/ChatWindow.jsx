@@ -4,6 +4,7 @@
 
 import { useEffect, useRef } from 'react';
 import './ChatWindow.css';
+import { STRINGS } from '../../../constants';
 
 export default function ChatWindow({
   user,
@@ -11,6 +12,9 @@ export default function ChatWindow({
   draft,
   onDraftChange,
   onSend,
+  loading = false,
+  error = null,
+  sendingMessage = false,
 }) {
   const bottomRef = useRef(null);
 
@@ -28,7 +32,7 @@ export default function ChatWindow({
   if (!user) {
     return (
       <div className="chat-window chat-window--empty">
-        <p className="chat-window__empty-text">Select a conversation to start chatting</p>
+        <p className="chat-window__empty-text">{STRINGS.chat.selectConversation}</p>
       </div>
     );
   }
@@ -40,30 +44,42 @@ export default function ChatWindow({
         <div className="chat-window__header-info">
           <h3 className="chat-window__name">{user.name}</h3>
           <span className="chat-window__status">
-            {user.online ? 'Online' : 'Offline'}
+            {user.online ? STRINGS.chat.online : STRINGS.chat.offline}
           </span>
         </div>
       </header>
 
       <div className="chat-window__messages">
-        {messages.map(msg => (
-          <div
-            key={msg.id}
-            className={`chat-window__bubble-wrap chat-window__bubble-wrap--${msg.sender}`}
-          >
-            <div className={`chat-window__bubble chat-window__bubble--${msg.sender}`}>
-              <p className="chat-window__text">{msg.text}</p>
-              <span className="chat-window__msg-time">{msg.time}</span>
-            </div>
+        {error && (
+          <div className="chat-window__error">
+            <p>{error}</p>
           </div>
-        ))}
+        )}
+        
+        {loading ? (
+          <div className="chat-window__loading">
+            <p>{STRINGS.chat.loading}</p>
+          </div>
+        ) : (
+          messages.map(msg => (
+            <div
+              key={msg.id}
+              className={`chat-window__bubble-wrap chat-window__bubble-wrap--${msg.sender}`}
+            >
+              <div className={`chat-window__bubble chat-window__bubble--${msg.sender}`}>
+                <p className="chat-window__text">{msg.text}</p>
+                <span className="chat-window__msg-time">{msg.time}</span>
+              </div>
+            </div>
+          ))
+        )}
         <div ref={bottomRef} />
       </div>
 
       <footer className="chat-window__footer">
         <textarea
           className="chat-window__input"
-          placeholder="Type a message..."
+          placeholder={STRINGS.chat.typeMessage}
           rows={1}
           value={draft}
           onChange={e => onDraftChange(e.target.value)}
@@ -73,12 +89,17 @@ export default function ChatWindow({
           type="button"
           className="chat-window__send-btn"
           onClick={onSend}
-          disabled={!draft.trim()}
-          aria-label="Send message"
+          disabled={!draft.trim() || sendingMessage}
+          aria-label={STRINGS.chat.sendMessage}
+          title={sendingMessage ? STRINGS.chat.sending : STRINGS.chat.sendMessage}
         >
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-          </svg>
+          {sendingMessage ? (
+            <span className="chat-window__send-loader">⏳</span>
+          ) : (
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+            </svg>
+          )}
         </button>
       </footer>
     </div>
