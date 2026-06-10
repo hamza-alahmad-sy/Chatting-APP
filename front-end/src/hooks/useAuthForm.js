@@ -8,6 +8,7 @@
 
 import { useState, useCallback } from 'react';
 import { AUTH_TABS, STRINGS } from '../constants';
+import { signIn, signUp } from '../services/authService';
 
 const INITIAL_FIELDS = {
   name:     '',
@@ -59,8 +60,11 @@ export function useAuthForm(tab, onSuccess) {
     }
     setLoading(true);
     try {
-      // TODO: replace with authService.signIn(fields) or authService.signUp(fields)
-      await new Promise(r => setTimeout(r, 800)); // simulated network delay
+      if (tab === AUTH_TABS.SIGN_IN) {
+        await signIn({ userName: fields.email, password: fields.password });
+      } else {
+        await signUp({ name: fields.name, email: fields.email, password: fields.password });
+      }
       onSuccess?.();
     } finally {
       setLoading(false);

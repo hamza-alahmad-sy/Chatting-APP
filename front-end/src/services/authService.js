@@ -5,21 +5,18 @@
  * Swap the base URL or add auth tokens here without touching any UI file.
  */
 
+import api from './api';
+
 const BASE_URL = process.env.REACT_APP_API_URL || 'https://api.example.com';
 
 /**
  * Sign in an existing user.
- * @param {{ email: string, password: string }} credentials
+ * @param {{ userName: string, password: string }} credentials
  * @returns {Promise<{ token: string, user: object }>}
  */
-export async function signIn({ email, password }) {
-  const response = await fetch(`${BASE_URL}/auth/signin`, {
-    method:  'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body:    JSON.stringify({ email, password }),
-  });
-  if (!response.ok) throw new Error('Invalid credentials');
-  return response.json();
+export async function signIn({ userName, password }) {
+  const response = await api.post('/auth/login', { userName, password });
+  return response.data;
 }
 
 /**
