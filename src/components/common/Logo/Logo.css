@@ -21,7 +21,7 @@
 }
 
 .logo__text {
-  font-size: 11px;
+  font-size: 25px;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
@@ -41,5 +41,5 @@
   color: #fff;
 }
  .logo__text {
-  color: var(--color-primary);
+  color: #fff;
 }
