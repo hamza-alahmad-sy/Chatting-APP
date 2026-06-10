@@ -1,0 +1,241 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Migrations\\20260609123746_FixMessageColumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Chatting\\Migrations\\20260609123746_FixMessageColumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\source\\repos\\chatting\\chatting\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\source\\repos\\chatting\\chatting\\models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\source\\repos\\chatting\\chatting\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\source\\repos\\chatting\\chatting\\dtos\\sendmessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\dtos\\sendmessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\source\\repos\\chatting\\chatting\\controllers\\chatscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\controllers\\chatscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\source\\repos\\chatting\\chatting\\dtos\\getorcreateconversationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\dtos\\getorcreateconversationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\source\\repos\\chatting\\chatting\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\source\\repos\\chatting\\chatting\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Migrations\\20260609113356_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Chatting\\Migrations\\20260609113356_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\source\\repos\\chatting\\chatting\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\source\\repos\\chatting\\chatting\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\source\\repos\\chatting\\chatting\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20260609123746_FixMessageColumn.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Migrations\\20260609123746_FixMessageColumn.cs",
+              "RelativeDocumentMoniker": "Chatting\\Migrations\\20260609123746_FixMessageColumn.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Migrations\\20260609123746_FixMessageColumn.cs",
+              "RelativeToolTip": "Chatting\\Migrations\\20260609123746_FixMessageColumn.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T12:37:46.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MessagesController.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Controllers\\MessagesController.cs",
+              "RelativeDocumentMoniker": "Chatting\\Controllers\\MessagesController.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Controllers\\MessagesController.cs",
+              "RelativeToolTip": "Chatting\\Controllers\\MessagesController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwCEAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T12:24:08.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SendMessageDto.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\DTOs\\SendMessageDto.cs",
+              "RelativeDocumentMoniker": "Chatting\\DTOs\\SendMessageDto.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\DTOs\\SendMessageDto.cs",
+              "RelativeToolTip": "Chatting\\DTOs\\SendMessageDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T12:23:29.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Message.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Models\\Message.cs",
+              "RelativeDocumentMoniker": "Chatting\\Models\\Message.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Models\\Message.cs",
+              "RelativeToolTip": "Chatting\\Models\\Message.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T12:23:12.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ChatsController.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Controllers\\ChatsController.cs",
+              "RelativeDocumentMoniker": "Chatting\\Controllers\\ChatsController.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Controllers\\ChatsController.cs",
+              "RelativeToolTip": "Chatting\\Controllers\\ChatsController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAcwBMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T12:04:09.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetOrCreateConversationDto.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\DTOs\\GetOrCreateConversationDto.cs",
+              "RelativeDocumentMoniker": "Chatting\\DTOs\\GetOrCreateConversationDto.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\DTOs\\GetOrCreateConversationDto.cs",
+              "RelativeToolTip": "Chatting\\DTOs\\GetOrCreateConversationDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T12:00:45.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Chat.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Models\\Chat.cs",
+              "RelativeDocumentMoniker": "Chatting\\Models\\Chat.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Models\\Chat.cs",
+              "RelativeToolTip": "Chatting\\Models\\Chat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T11:59:30.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Chatting\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Chatting\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T11:53:46.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\DTOs\\UserDto.cs",
+              "RelativeDocumentMoniker": "Chatting\\DTOs\\UserDto.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\DTOs\\UserDto.cs",
+              "RelativeToolTip": "Chatting\\DTOs\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T11:53:22.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20260609113356_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Migrations\\20260609113356_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Chatting\\Migrations\\20260609113356_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Migrations\\20260609113356_InitialCreate.cs",
+              "RelativeToolTip": "Chatting\\Migrations\\20260609113356_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T11:33:56.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\appsettings.json",
+              "RelativeDocumentMoniker": "Chatting\\appsettings.json",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\appsettings.json",
+              "RelativeToolTip": "Chatting\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-09T11:14:27.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\DTOs\\LoginDto.cs",
+              "RelativeDocumentMoniker": "Chatting\\DTOs\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\DTOs\\LoginDto.cs",
+              "RelativeToolTip": "Chatting\\DTOs\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T11:09:48.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Chatting\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Chatting\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwC4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T10:42:32.398Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
