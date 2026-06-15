@@ -8,7 +8,7 @@
 
 import { useState, useCallback } from 'react';
 import { AUTH_TABS, STRINGS } from '../constants';
-import { signIn, signUp, getAuthErrorMessage } from '../services/authService';
+import { signIn, signUp, getAuthErrorMessage, saveAuthToken } from '../services/authService';
 
 const INITIAL_FIELDS = {
   name:     '',
@@ -34,9 +34,7 @@ export function useAuthForm(tab, onSuccess) {
   /** Basic client-side validation — extend as needed */
   const validate = useCallback(() => {
     const next = {};
-    if (tab === AUTH_TABS.SIGN_UP && !fields.name.trim()) {
-      next.name = STRINGS.validation.nameRequired;
-    }
+    
     if (!fields.email.trim()) {
       next.email = STRINGS.validation.emailRequired;
     } else if (!/\S+@\S+\.\S+/.test(fields.email)) {
@@ -65,11 +63,14 @@ export function useAuthForm(tab, onSuccess) {
     try {
       if (tab === AUTH_TABS.SIGN_IN) {
         const data = await signIn({ email: fields.email, password: fields.password });
-        if (data?.token) localStorage.setItem('token', data.token);
+        saveAuthToken(data);
         onSuccess?.();
       } else {
-        const data = await signUp({ name: fields.name, email: fields.email, password: fields.password });
-        if (data?.token) localStorage.setItem('token', data.token);
+        const data = await signUp({
+          email: fields.email,
+          password: fields.password,
+        });
+        saveAuthToken(data);
         onSuccess?.();
       }
     } catch (error) {

@@ -2,20 +2,43 @@
  * services/chatService.js
  *
  * جميع استدعاءات API الخاصة بالدردشة تكون هنا
- * يمكنك تغيير BASE_URL للتواصل مع Backend
  */
 
+import api from './api';
 import { MOCK_USERS, INITIAL_MESSAGES } from '../constants';
 
-// تغيير هذا الـ URL إلى عنوان Backend الفعلي
-const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 const USE_MOCK_CHAT = process.env.REACT_APP_USE_MOCK_CHAT === 'true';
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+function getDisplayName(user) {
+  return user.name || user.userName || user.UserName || user.email || user.Email || 'مستخدم';
+}
+
+function getInitials(name) {
+  const trimmed = name.trim();
+  if (!trimmed) return '??';
+  const parts = trimmed.split(/\s+/);
+  if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+  return trimmed.slice(0, 2).toUpperCase();
+}
+
+/** تحويل بيانات الباكند إلى الشكل الذي تتوقعه UserList */
+export function mapUserToListItem(user) {
+  const name = getDisplayName(user);
+  return {
+    id: String(user.id ?? user.Id),
+    name,
+    initials: user.initials ?? getInitials(name),
+    lastMessage: user.lastMessage ?? '',
+    time: user.time ?? '',
+    online: user.online ?? false,
+  };
+}
+
 /**
- * جلب قائمة المستخدمين
- * @returns {Promise<Array>} قائمة المستخدمين
+ * جلب قائمة المستخدمين المسجّلين
+ * @returns {Promise<Array>}
  */
 export async function fetchUsers() {
   if (USE_MOCK_CHAT) {
@@ -23,31 +46,18 @@ export async function fetchUsers() {
     return MOCK_USERS;
   }
 
-  try {
-    const response = await fetch(`${BASE_URL}/users`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        // أضف token إذا كان Backend يتطلبه
-        // 'Authorization': `Bearer ${localStorage.getItem('token')}`
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`خطأ: ${response.status}`);
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('خطأ في جلب المستخدمين:', error);
-    throw error;
-  }
+  const response = await api.get('/Users');
+  const raw = response.data;
+  const data = Array.isArray(raw)
+    ? raw
+    : raw?.users ?? raw?.Users ?? raw?.data ?? raw?.Data ?? [];
+  return data.map(mapUserToListItem);
 }
 
 /**
  * جلب رسائل محادثة معينة
- * @param {string} userId - معرّف المستخدم
- * @returns {Promise<Array>} قائمة الرسائل
+ * @param {string} userId
+ * @returns {Promise<Array>}
  */
 export async function fetchMessages(userId) {
   if (USE_MOCK_CHAT) {
@@ -55,98 +65,41 @@ export async function fetchMessages(userId) {
     return INITIAL_MESSAGES[userId] ?? [];
   }
 
-  try {
-    const response = await fetch(`${BASE_URL}/messages/${userId}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        // 'Authorization': `Bearer ${localStorage.getItem('token')}`
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`خطأ: ${response.status}`);
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('خطأ في جلب الرسائل:', error);
-    throw error;
-  }
+  const response = await api.get(`/messages/${userId}`);
+  return response.data;
 }
 
 /**
  * إرسال رسالة جديدة
- * @param {string} receiverId - معرّف المستقبِل
- * @param {string} text - نص الرسالة
- * @returns {Promise<Object>} الرسالة المُرسلة
+ * @param {string} receiverId
+ * @param {string} text
+ * @returns {Promise<Object>}
  */
 export async function sendMessageAPI(receiverId, text) {
   if (USE_MOCK_CHAT) {
     await sleep(300);
-    const message = {
+    return {
       id: `m${Date.now()}`,
       text,
       sender: 'me',
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     };
-    return message;
   }
 
-  try {
-    const response = await fetch(`${BASE_URL}/messages`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        // 'Authorization': `Bearer ${localStorage.getItem('token')}`
-      },
-      body: JSON.stringify({
-        receiverId,
-        text,
-      }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`خطأ: ${response.status}`);
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('خطأ في إرسال الرسالة:', error);
-    throw error;
-  }
+  const response = await api.post('/messages', { receiverId, text });
+  return response.data;
 }
 
 /**
  * جلب معلومات المستخدم الحالي
- * @returns {Promise<Object>} بيانات المستخدم
+ * @returns {Promise<Object>}
  */
 export async function fetchCurrentUser() {
   if (USE_MOCK_CHAT) {
     await sleep(300);
-    return {
-      id: 'me',
-      name: 'أنت',
-      email: 'me@example.com',
-    };
+    return { id: 'me', name: 'أنت', email: 'me@example.com' };
   }
 
-  try {
-    const response = await fetch(`${BASE_URL}/auth/me`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        // 'Authorization': `Bearer ${localStorage.getItem('token')}`
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`خطأ: ${response.status}`);
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error('خطأ في جلب بيانات المستخدم:', error);
-    throw error;
-  }
+  const response = await api.get('/auth/me');
+  return response.data;
 }

@@ -16,16 +16,6 @@ export default function SignUpForm({ fields, errors, submitError, loading, onCha
 
   return (
     <>
-      <FormInput
-        type="text"
-        name="name"
-        placeholder={STRINGS.auth.fullName}
-        value={fields.name}
-        onChange={onChange}
-        error={errors.name}
-        icon={<UserIcon />}
-        style={{ animation: 'slideUp 0.4s both' }}
-      />
 
       <FormInput
         type="email"

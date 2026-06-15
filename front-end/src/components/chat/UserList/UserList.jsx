@@ -12,6 +12,8 @@ export default function UserList({
   searchQuery,
   onSearchChange,
   onSelectUser,
+  loading = false,
+  loadError = '',
 }) {
   return (
     <aside className="user-list">
@@ -35,6 +37,15 @@ export default function UserList({
       </div>
 
       <ul className="user-list__items">
+        {loading && (
+          <li className="user-list__status">{STRINGS.chat.loading}</li>
+        )}
+        {!loading && loadError && (
+          <li className="user-list__status user-list__status--error">{loadError}</li>
+        )}
+        {!loading && !loadError && users.length === 0 && (
+          <li className="user-list__status">{STRINGS.chat.noUsers}</li>
+        )}
         {users.map(user => (
           <li key={user.id}>
             <button
@@ -48,7 +59,7 @@ export default function UserList({
               </div>
               <div className="user-list__info">
                 <div className="user-list__row">
-                  <span className="user-list__name">{user.name}</span>
+                  <span className="user-list__name">{user.name.split('@')[0]}</span>
                   <span className="user-list__time">{user.time}</span>
                 </div>
                 <p className="user-list__preview">{user.lastMessage}</p>

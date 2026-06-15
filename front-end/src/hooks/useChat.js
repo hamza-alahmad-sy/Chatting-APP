@@ -5,7 +5,7 @@
  */
 
 import { useState, useCallback, useMemo, useEffect } from 'react';
-import { MOCK_USERS } from '../constants';
+import { STRINGS } from '../constants';
 import { fetchUsers, fetchMessages, sendMessageAPI } from '../services/chatService';
 
 function formatTime() {
@@ -18,33 +18,23 @@ export function useChat() {
   const [users, setUsers] = useState([]);
   const [messages, setMessages] = useState({});
   const [draft, setDraft] = useState('');
-  
-  // حالات التحميل والأخطاء
   const [loading, setLoading] = useState(true);
   const [sendingMessage, setSendingMessage] = useState(false);
+  const [usersLoadError, setUsersLoadError] = useState('');
 
-  // جلب قائمة المستخدمين عند تحميل الـ Component
   useEffect(() => {
     const loadUsers = async () => {
       try {
         setLoading(true);
-        
-        // تجربة جلب البيانات من Backend
-        // إذا فشلت، استخدم البيانات الوهمية
-        try {
-          const data = await fetchUsers();
-          setUsers(data);
-          if (data.length > 0) {
-            setSelectedUserId(data[0].id);
-          }
-        } catch (err) {
-          console.warn('استخدام البيانات الوهمية:', err);
-          setUsers(MOCK_USERS);
-          setSelectedUserId(MOCK_USERS[0].id);
-        }
+        setUsersLoadError('');
+        const data = await fetchUsers();
+        setUsers(data);
+        setSelectedUserId(data.length > 0 ? data[0].id : null);
       } catch (err) {
-        setUsers(MOCK_USERS);
-        setSelectedUserId(MOCK_USERS[0].id);
+        console.error('خطأ في جلب المستخدمين:', err);
+        setUsers([]);
+        setSelectedUserId(null);
+        setUsersLoadError(STRINGS.chat.loadUsersFailed);
       } finally {
         setLoading(false);
       }
@@ -53,7 +43,6 @@ export function useChat() {
     loadUsers();
   }, []);
 
-  // جلب الرسائل عند تغيير المستخدم المختار
   useEffect(() => {
     if (!selectedUserId) return;
 
@@ -76,29 +65,24 @@ export function useChat() {
     loadMessages();
   }, [selectedUserId]);
 
-  // تصفية المستخدمين حسب البحث
   const filteredUsers = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
     if (!q) return users;
     return users.filter(u => u.name.toLowerCase().includes(q));
   }, [users, searchQuery]);
 
-  // المستخدم المختار الحالي
   const selectedUser = useMemo(
     () => users.find(u => u.id === selectedUserId) ?? null,
     [users, selectedUserId],
   );
 
-  // الرسائل النشطة للمستخدم المختار
   const activeMessages = messages[selectedUserId] ?? [];
 
-  // اختيار مستخدم
   const selectUser = useCallback((userId) => {
     setSelectedUserId(userId);
     setDraft('');
   }, []);
 
-  // إعادة محاولة تحميل الرسائل
   const retryLoadMessages = useCallback(async () => {
     if (!selectedUserId) return;
 
@@ -113,33 +97,22 @@ export function useChat() {
     }
   }, [selectedUserId]);
 
-  // مسح رسالة الخطأ
-  const clearError = useCallback(() => {
-    // لا نحتاجها الآن لأننا لا نستخدم error state
-  }, []);
+  const clearError = useCallback(() => {}, []);
 
-  // إرسال رسالة جديدة
   const sendMessage = useCallback(async () => {
     const text = draft.trim();
     if (!text || !selectedUserId) return;
 
     try {
       setSendingMessage(true);
-      
-      // إرسال الرسالة إلى Backend
       const newMsg = await sendMessageAPI(selectedUserId, text);
-      
-      // إضافة الرسالة إلى قائمة الرسائل المحلية
       setMessages(prev => ({
         ...prev,
         [selectedUserId]: [...(prev[selectedUserId] ?? []), newMsg],
       }));
-      
       setDraft('');
     } catch (err) {
       console.error('خطأ في إرسال الرسالة:', err);
-      
-      // إضافة الرسالة محلياً مع علامة failed
       const localMsg = {
         id: `m${Date.now()}`,
         text,
@@ -147,7 +120,6 @@ export function useChat() {
         time: formatTime(),
         failed: true,
       };
-      
       setMessages(prev => ({
         ...prev,
         [selectedUserId]: [...(prev[selectedUserId] ?? []), localMsg],
@@ -158,15 +130,10 @@ export function useChat() {
     }
   }, [draft, selectedUserId]);
 
-  // إعادة محاولة إرسال رسالة فاشلة
   const retryMessage = useCallback(async (failedMsg) => {
     try {
       setSendingMessage(true);
-      
-      // إرسال الرسالة إلى Backend
       const newMsg = await sendMessageAPI(selectedUserId, failedMsg.text);
-      
-      // حذف الرسالة الفاشلة وإضافة الجديدة
       setMessages(prev => ({
         ...prev,
         [selectedUserId]: [
@@ -176,7 +143,6 @@ export function useChat() {
       }));
     } catch (err) {
       console.error('خطأ في إعادة إرسال الرسالة:', err);
-      // الرسالة تبقى مع علامة failed
     } finally {
       setSendingMessage(false);
     }
@@ -195,6 +161,7 @@ export function useChat() {
     sendMessage,
     loading,
     sendingMessage,
+    usersLoadError,
     retryLoadMessages,
     clearError,
     retryMessage,

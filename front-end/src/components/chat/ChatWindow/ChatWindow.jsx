@@ -46,6 +46,7 @@ export default function ChatWindow({
           <span className="chat-window__status">
             {user.online ? STRINGS.chat.online : STRINGS.chat.offline}
           </span>
+          <span className="chat-window__id">{user.id}</span>
         </div>
       </header>
 

@@ -43,6 +43,8 @@ export const STRINGS = {
     sendMessage: 'إرسال رسالة',
     sending: 'جاري الإرسال...',
     loading: 'جاري التحميل...',
+    noUsers: 'لا يوجد مستخدمون مسجلون',
+    loadUsersFailed: 'تعذر تحميل قائمة المستخدمين',
   },
   validation: {
     nameRequired: 'الاسم مطلوب',

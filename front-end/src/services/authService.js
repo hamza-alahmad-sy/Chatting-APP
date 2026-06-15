@@ -9,6 +9,12 @@ import api from './api';
 
 const BASE_URL = process.env.REACT_APP_API_URL || 'https://api.example.com';
 
+/** حفظ التوكن بغض النظر عن شكل استجابة ASP.NET */
+export function saveAuthToken(data) {
+  const token = data?.token ?? data?.Token ?? data?.accessToken ?? data?.AccessToken;
+  if (token) localStorage.setItem('token', token);
+}
+
 /**
  * Extract a readable message from an axios / API error.
  */
@@ -35,14 +41,9 @@ export async function signIn({ email, password }) {
  * @param {{ name: string, email: string, password: string }} data
  * @returns {Promise<{ token: string, user: object }>}
  */
-export async function signUp({ name, email, password }) {
-  const response = await fetch(`${BASE_URL}/auth/signup`, {
-    method:  'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body:    JSON.stringify({ name, email, password }),
-  });
-  if (!response.ok) throw new Error('Registration failed');
-  return response.json();
+export async function signUp({ email, password }) {
+  const response = await api.post('/Auth/register', { UserName: email, Password: password });
+  return response.data;
 }
 
 /**

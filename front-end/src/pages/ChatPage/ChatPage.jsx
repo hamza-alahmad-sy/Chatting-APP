@@ -22,6 +22,7 @@ export default function ChatPage() {
     sendMessage,
     loading,
     sendingMessage,
+    usersLoadError,
     retryMessage,
   } = useChat();
 
@@ -37,6 +38,8 @@ export default function ChatPage() {
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
           onSelectUser={selectUser}
+          loading={loading}
+          loadError={usersLoadError}
         />
         <ChatWindow
           user={selectedUser}
@@ -44,7 +47,6 @@ export default function ChatPage() {
           draft={draft}
           onDraftChange={setDraft}
           onSend={sendMessage}
-          loading={loading}
           sendingMessage={sendingMessage}
           onRetryMessage={retryMessage}
         />
