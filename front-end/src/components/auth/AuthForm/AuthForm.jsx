@@ -8,18 +8,23 @@
  * so this file stays under 80 lines and each tab's fields are fully isolated.
  */
 
+import { useRef } from 'react';
 import './AuthForm.css';
 import { Logo, SocialButtons } from '../../common';
 import SignInForm from '../SignInForm/SignInForm';
 import SignUpForm from '../SignUpForm/SignUpForm';
 import { AUTH_TABS, TAB_CONTENT, STRINGS } from '../../../constants';
 
-export default function AuthForm({ tab, animKey, onTabSwitch, fields, errors, submitError, loading, onChange, onSubmit }) {
+export default function AuthForm({ tab, animKey, staggerEnter, onTabSwitch, fields, errors, submitError, loading, onChange, onSubmit }) {
   const { formTitle } = TAB_CONTENT[tab];
   const isSignIn = tab === AUTH_TABS.SIGN_IN;
+  const useStagger = useRef(staggerEnter);
+  const formClass = useStagger.current
+    ? 'auth-form auth-form--stagger'
+    : 'auth-form auth-form--fade';
 
   return (
-    <div className="auth-form anim-slide-left" key={`form-${animKey}`}>
+    <div className={formClass} key={`form-${animKey}`}>
 
       {/* Branding */}
       <Logo variant="dark" className="auth-form__logo" />

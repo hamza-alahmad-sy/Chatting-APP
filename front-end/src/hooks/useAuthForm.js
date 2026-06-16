@@ -8,7 +8,7 @@
 
 import { useState, useCallback } from 'react';
 import { AUTH_TABS, STRINGS } from '../constants';
-import { signIn, signUp, getAuthErrorMessage, saveAuthToken } from '../services/authService';
+import { signIn, signUp, getAuthErrorMessage, saveAuthSession, getCurrentUserId } from '../services/authService';
 
 const INITIAL_FIELDS = {
   name:     '',
@@ -63,14 +63,21 @@ export function useAuthForm(tab, onSuccess) {
     try {
       if (tab === AUTH_TABS.SIGN_IN) {
         const data = await signIn({ email: fields.email, password: fields.password });
-        saveAuthToken(data);
+        saveAuthSession(data);
+        if (!getCurrentUserId()) {
+          throw new Error(STRINGS.validation.sessionSaveFailed);
+        }
         onSuccess?.();
       } else {
-        const data = await signUp({
+        await signUp({
           email: fields.email,
           password: fields.password,
         });
-        saveAuthToken(data);
+        const data = await signIn({ email: fields.email, password: fields.password });
+        saveAuthSession(data);
+        if (!getCurrentUserId()) {
+          throw new Error(STRINGS.validation.sessionSaveFailed);
+        }
         onSuccess?.();
       }
     } catch (error) {

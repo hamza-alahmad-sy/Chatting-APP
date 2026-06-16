@@ -5,6 +5,7 @@
 import './UserList.css';
 import { Logo } from '../../common';
 import { STRINGS } from '../../../constants';
+import { getAuthUserProfile } from '../../../services/authService';
 
 export default function UserList({
   users,
@@ -12,9 +13,12 @@ export default function UserList({
   searchQuery,
   onSearchChange,
   onSelectUser,
+  onLogout,
   loading = false,
   loadError = '',
 }) {
+  const { displayName, initials } = getAuthUserProfile();
+
   return (
     <aside className="user-list">
       <div className="user-list__header">
@@ -68,6 +72,32 @@ export default function UserList({
           </li>
         ))}
       </ul>
+
+      {onLogout && (
+        <div className="user-list__profile">
+          <div className="user-list__avatar-wrap">
+            <span className="user-list__avatar user-list__avatar--profile">{initials}</span>
+            <span className="user-list__online" />
+          </div>
+          <div className="user-list__profile-info">
+            <span className="user-list__profile-name">{displayName}</span>
+            <span className="user-list__profile-status">{STRINGS.chat.online}</span>
+          </div>
+          <button
+            type="button"
+            className="user-list__logout-btn"
+            onClick={onLogout}
+            title={STRINGS.chat.logout}
+            aria-label={STRINGS.chat.logout}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <polyline points="16 17 21 12 16 7" />
+              <line x1="21" y1="12" x2="9" y2="12" />
+            </svg>
+          </button>
+        </div>
+      )}
     </aside>
   );
 }

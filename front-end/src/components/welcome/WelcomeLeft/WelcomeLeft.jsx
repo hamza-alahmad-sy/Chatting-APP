@@ -1,6 +1,5 @@
 /*
  * components/welcome/WelcomeLeft/WelcomeLeft.jsx
- *
  * Left panel of the Welcome screen.
  * Contains animated blobs, branding, headline, and the "SIGN IN" CTA.
  */
@@ -9,7 +8,7 @@ import './WelcomeLeft.css';
 import { Logo } from '../../common';
 import { STRINGS } from '../../../constants';
 
-export default function WelcomeLeft({ onSignInClick }) {
+export default function WelcomeLeft({ onSignInClick, disabled = false }) {
   return (
     <div className="welcome-left anim-slide-left">
       {/* Background blobs */}
@@ -29,7 +28,12 @@ export default function WelcomeLeft({ onSignInClick }) {
         <p className="welcome-left__subtitle">
           {STRINGS.welcome.subtitle}
         </p>
-        <button className="welcome-left__btn" onClick={onSignInClick} type="button">
+        <button
+          className="welcome-left__btn"
+          onClick={onSignInClick}
+          type="button"
+          disabled={disabled}
+        >
           {STRINGS.welcome.signIn}
         </button>
       </div>

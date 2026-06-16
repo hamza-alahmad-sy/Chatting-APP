@@ -19,12 +19,14 @@ import { AuthForm, AuthSidePanel   } from '../../components/auth';
 import ChatPage from '../ChatPage/ChatPage';
 
 export default function AuthPage() {
-  const { screen, tab, animKey, goToAuth, switchTab, goToChat } = useAuthScreen();
+  const { screen, tab, animKey, cardPhase, goToAuth, switchTab, goToChat, logout } = useAuthScreen();
   const { fields, errors, submitError, loading, handleChange, handleSubmit } = useAuthForm(tab, goToChat);
 
   if (screen === SCREENS.CHAT) {
-    return <ChatPage />;
+    return <ChatPage onLogout={logout} />;
   }
+
+  const screenAnimClass = cardPhase !== 'idle' ? ` auth-card__screen--${cardPhase}` : '';
 
   return (
     <div className="page-root">
@@ -34,11 +36,12 @@ export default function AuthPage() {
 
       {/* Main card */}
       <div className="auth-card">
+        <div className={`auth-card__screen${screenAnimClass}`}>
 
         {/* ── Screen: Welcome ── */}
         {screen === SCREENS.WELCOME && (
           <>
-            <WelcomeLeft  onSignInClick={goToAuth} />
+            <WelcomeLeft onSignInClick={goToAuth} disabled={cardPhase !== 'idle'} />
             <WelcomeRight />
           </>
         )}
@@ -49,6 +52,7 @@ export default function AuthPage() {
             <AuthForm
               tab={tab}
               animKey={animKey}
+              staggerEnter={cardPhase === 'enter'}
               onTabSwitch={switchTab}
               fields={fields}
               errors={errors}
@@ -57,10 +61,11 @@ export default function AuthPage() {
               onChange={handleChange}
               onSubmit={handleSubmit}
             />
-            <AuthSidePanel tab={tab} animKey={animKey} />
+            <AuthSidePanel tab={tab} animKey={animKey} staggerEnter={cardPhase === 'enter'} />
           </>
         )}
 
+        </div>
       </div>
     </div>
   );

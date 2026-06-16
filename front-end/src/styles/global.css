@@ -58,3 +58,19 @@ body {
   position: relative;
   z-index: 1;
 }
+
+.auth-card__screen {
+  display: flex;
+  width: 100%;
+  min-height: 480px;
+  will-change: opacity, transform;
+}
+
+.auth-card__screen--exit {
+  animation: authScreenOut 0.42s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+  pointer-events: none;
+}
+
+.auth-card__screen--enter {
+  animation: authScreenIn 0.78s cubic-bezier(0.16, 1, 0.3, 1) both;
+}

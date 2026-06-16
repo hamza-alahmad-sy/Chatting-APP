@@ -5,15 +5,20 @@
  * Title and subtitle are driven by the active tab via TAB_CONTENT constants.
  */
 
+import { useRef } from 'react';
 import './AuthSidePanel.css';
 import { ChatSideIllus } from '../../illustrations';
 import { TAB_CONTENT } from '../../../constants';
 
-export default function AuthSidePanel({ tab, animKey }) {
+export default function AuthSidePanel({ tab, animKey, staggerEnter }) {
   const { sideTitle, sideSub } = TAB_CONTENT[tab];
+  const useStagger = useRef(staggerEnter);
+  const panelClass = useStagger.current
+    ? 'auth-side-panel auth-side-panel--stagger'
+    : 'auth-side-panel';
 
   return (
-    <div className="auth-side-panel anim-slide-right" key={`side-${animKey}`}>
+    <div className={panelClass} key={`side-${animKey}`}>
       <div className="auth-side-panel__deco auth-side-panel__deco--1" />
       <div className="auth-side-panel__deco auth-side-panel__deco--2" />
       <div className="auth-side-panel__deco auth-side-panel__deco--3" />

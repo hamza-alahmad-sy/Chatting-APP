@@ -5,7 +5,6 @@
 .form-input {
   position: relative;
   margin-bottom: 12px;
-  animation: slideUp 0.6s both;
 }
 
 .form-input__icon {

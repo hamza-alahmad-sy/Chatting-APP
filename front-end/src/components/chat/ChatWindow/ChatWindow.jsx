@@ -14,6 +14,7 @@ export default function ChatWindow({
   onSend,
   loading = false,
   error = null,
+  onRetry,
   sendingMessage = false,
 }) {
   const bottomRef = useRef(null);
@@ -54,6 +55,11 @@ export default function ChatWindow({
         {error && (
           <div className="chat-window__error">
             <p>{error}</p>
+            {onRetry && (
+              <button type="button" className="chat-window__retry-btn" onClick={onRetry}>
+                إعادة المحاولة
+              </button>
+            )}
           </div>
         )}
         

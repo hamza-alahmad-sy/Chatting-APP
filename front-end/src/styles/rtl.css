@@ -56,6 +56,10 @@
   border-right: 3px solid var(--color-primary);
 }
 
+[dir="rtl"] .user-list__logout-btn svg {
+  transform: scaleX(-1);
+}
+
 [dir="rtl"] .chat-window__bubble--them {
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 4px;

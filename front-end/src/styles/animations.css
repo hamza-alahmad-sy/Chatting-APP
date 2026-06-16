@@ -24,22 +24,37 @@
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-50px); }
+  from { opacity: 0; transform: translateX(-28px); }
   to   { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideInRight {
-  from { opacity: 0; transform: translateX(50px); }
+  from { opacity: 0; transform: translateX(28px); }
   to   { opacity: 1; transform: translateX(0); }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes authScreenOut {
+  from { opacity: 1; transform: scale(1) translateY(0); }
+  to   { opacity: 0; transform: scale(0.985) translateY(10px); }
+}
+
+@keyframes authScreenIn {
+  from { opacity: 0; transform: scale(0.985) translateY(14px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
 /* Utility animation classes — apply these on any element */
-.anim-slide-left  { animation: slideInLeft  0.65s cubic-bezier(0.25, 0.8, 0.25, 1) both; }
-.anim-slide-right { animation: slideInRight 0.65s cubic-bezier(0.25, 0.8, 0.25, 1) both; }
-.anim-slide-up    { animation: slideUp 0.6s both; }
+.anim-slide-left  { animation: slideInLeft  0.85s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-slide-right { animation: slideInRight 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both; }
+.anim-slide-up    { animation: slideUp 0.72s cubic-bezier(0.16, 1, 0.3, 1) both; }
 .anim-illus-float { animation: illusFloat 4s ease-in-out infinite; }

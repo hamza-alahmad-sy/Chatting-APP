@@ -8,7 +8,7 @@ import './ChatPage.css';
 import { useChat } from '../../hooks/useChat';
 import { UserList, ChatWindow } from '../../components/chat';
 
-export default function ChatPage() {
+export default function ChatPage({ onLogout }) {
   const {
     filteredUsers,
     selectedUser,
@@ -21,9 +21,11 @@ export default function ChatPage() {
     selectUser,
     sendMessage,
     loading,
+    messagesLoading,
     sendingMessage,
     usersLoadError,
-    retryMessage,
+    messagesLoadError,
+    
   } = useChat();
 
   return (
@@ -38,6 +40,7 @@ export default function ChatPage() {
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
           onSelectUser={selectUser}
+          onLogout={onLogout}
           loading={loading}
           loadError={usersLoadError}
         />
@@ -47,8 +50,11 @@ export default function ChatPage() {
           draft={draft}
           onDraftChange={setDraft}
           onSend={sendMessage}
+          loading={messagesLoading}
+          error={messagesLoadError}
+          
           sendingMessage={sendingMessage}
-          onRetryMessage={retryMessage}
+         
         />
       </div>
     </div>

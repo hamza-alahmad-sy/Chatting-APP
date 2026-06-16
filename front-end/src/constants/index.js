@@ -45,6 +45,10 @@ export const STRINGS = {
     loading: 'جاري التحميل...',
     noUsers: 'لا يوجد مستخدمون مسجلون',
     loadUsersFailed: 'تعذر تحميل قائمة المستخدمين',
+    openChatFailed: 'تعذر فتح المحادثة',
+    sessionExpired: 'انتهت الجلسة، يرجى تسجيل الدخول مرة أخرى',
+    sendMessageFailed: 'تعذر إرسال الرسالة، تأكد من فتح المحادثة أولاً',
+    logout: 'تسجيل الخروج',
   },
   validation: {
     nameRequired: 'الاسم مطلوب',
@@ -55,47 +59,13 @@ export const STRINGS = {
     invalidCredentials: 'البريد الإلكتروني أو كلمة المرور غير صحيحين',
     authFailed: 'حدث خطأ أثناء تسجيل الدخول، حاول مرة أخرى',
     registrationFailed: 'فشل إنشاء الحساب، حاول مرة أخرى',
+    sessionSaveFailed: 'تم تسجيل الدخول لكن لم تُحفظ بيانات الجلسة، حاول مرة أخرى',
   },
 };
 
 /** Mock users for the chat sidebar (replace with API data later) */
-export const MOCK_USERS = [
-  { id: '1', name: 'سارة أحمد',    initials: 'سأ', lastMessage: 'مرحباً، كيف حالك؟',              time: '10:30', online: true  },
-  { id: '2', name: 'عمر حسن',      initials: 'عح', lastMessage: 'أراك غداً!',                      time: '09:15', online: true  },
-  { id: '3', name: 'ليلى محمود',   initials: 'لم', lastMessage: 'شكراً على المساعدة 🙏',           time: 'أمس',   online: false },
-  { id: '4', name: 'يوسف علي',     initials: 'يع', lastMessage: 'هل شاهدت الفيلم؟',                time: 'أمس',   online: false },
-  { id: '5', name: 'نور إبراهيم',  initials: 'نإ', lastMessage: 'أخبرني عندما تكون متاحاً',        time: 'الاثنين', online: true  },
-  { id: '6', name: 'هناء صالح',    initials: 'هص', lastMessage: 'يبدو جيداً!',                     time: 'الأحد', online: false },
-  { id: '7', name: 'جميل أحمد',    initials: 'جأ', lastMessage: 'مرحباً، كيف حالك؟',               time: '10:30', online: true  },
-];
 
-/** Seed messages per conversation */
-export const INITIAL_MESSAGES = {
-  '1': [
-    { id: 'm1', text: 'مرحباً! كيف حالك؟', sender: 'them', time: '10:28' },
-    { id: 'm2', text: 'أنا بخير، شكراً! أعمل على المشروع الجديد.', sender: 'me', time: '10:29' },
-    { id: 'm3', text: 'مرحباً، كيف حالك؟', sender: 'them', time: '10:30' },
-  ],
-  '2': [
-    { id: 'm4', text: 'هل ما زلنا نلتقي غداً؟', sender: 'me', time: '09:10' },
-    { id: 'm5', text: 'نعم! نفس المكان كالعادة.', sender: 'them', time: '09:12' },
-    { id: 'm6', text: 'أراك غداً!', sender: 'them', time: '09:15' },
-  ],
-  '3': [
-    { id: 'm7', text: 'هل يمكنك مساعدتي في صفحة تسجيل الدخول؟', sender: 'them', time: 'أمس' },
-    { id: 'm8', text: 'بالتأكيد، أرسلت لك المستندات.', sender: 'me', time: 'أمس' },
-    { id: 'm9', text: 'شكراً على المساعدة 🙏', sender: 'them', time: 'أمس' },
-  ],
-  '4': [
-    { id: 'm10', text: 'هل شاهدت الفيلم؟', sender: 'them', time: 'أمس' },
-  ],
-  '5': [
-    { id: 'm11', text: 'أخبرني عندما تكون متاحاً', sender: 'them', time: 'الاثنين' },
-  ],
-  '6': [
-    { id: 'm12', text: 'يبدو جيداً!', sender: 'them', time: 'الأحد' },
-  ],
-};
+
 
 /** Auth tab identifiers */
 export const AUTH_TABS = {

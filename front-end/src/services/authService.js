@@ -15,16 +15,72 @@ export function saveAuthToken(data) {
   if (token) localStorage.setItem('token', token);
 }
 
+/** حفظ بيانات الجلسة بعد تسجيل الدخول */
+export function saveAuthSession(data) {
+  saveAuthToken(data);
+  const userId = data?.userId ?? data?.UserId;
+  const userName = data?.userName ?? data?.UserName;
+  if (userId != null) localStorage.setItem('userId', String(userId));
+  if (userName) localStorage.setItem('userName', userName);
+}
+
+/** معرّف المستخدم الحالي المسجّل دخوله */
+export function getCurrentUserId() {
+  return localStorage.getItem('userId');
+}
+
+/** اسم المستخدم الحالي المسجّل دخوله */
+export function getCurrentUserName() {
+  return localStorage.getItem('userName');
+}
+
+function getInitials(name) {
+  const trimmed = (name || '').trim();
+  if (!trimmed) return '??';
+  const parts = trimmed.split(/\s+/);
+  if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+  return trimmed.slice(0, 2).toUpperCase();
+}
+
+/** بيانات المستخدم الحالي للعرض في الواجهة */
+export function getAuthUserProfile() {
+  const userName = getCurrentUserName() || '';
+  const displayName = userName.includes('@')
+    ? userName.split('@')[0]
+    : userName || 'مستخدم';
+  return {
+    userName,
+    displayName,
+    initials: getInitials(displayName),
+  };
+}
+
+/** هل يوجد جلسة محفوظة؟ */
+export function isAuthenticated() {
+  return Boolean(localStorage.getItem('userId') || localStorage.getItem('token'));
+}
+
+/** مسح الجلسة عند تسجيل الخروج */
+export function clearAuthSession() {
+  localStorage.removeItem('token');
+  localStorage.removeItem('userId');
+  localStorage.removeItem('userName');
+}
+
 /**
  * Extract a readable message from an axios / API error.
  */
-export function getAuthErrorMessage(error, fallback) {
-  const data = error.response?.data;
+export function getApiErrorMessage(error, fallback) {
+  const data = error?.response?.data;
   if (typeof data === 'string' && data.trim()) return data;
   if (data?.message) return data.message;
   if (data?.title) return data.title;
+  if (error?.message) return error.message;
   return fallback;
 }
+
+/** @deprecated استخدم getApiErrorMessage */
+export const getAuthErrorMessage = getApiErrorMessage;
 
 /**
  * Sign in an existing user.

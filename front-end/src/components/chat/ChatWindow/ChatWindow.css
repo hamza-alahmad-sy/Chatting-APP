@@ -157,3 +157,31 @@
 .chat-window__send-btn svg { width: 20px; height: 20px; }
 .chat-window__send-btn:hover:not(:disabled) { transform: scale(1.05); }
 .chat-window__send-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.chat-window__error,
+.chat-window__loading {
+  margin: 12px 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.chat-window__error {
+  background: #fdecea;
+  color: #b42318;
+}
+
+.chat-window__loading {
+  color: var(--color-text-muted);
+}
+
+.chat-window__retry-btn {
+  margin-top: 8px;
+  border: none;
+  background: transparent;
+  color: #b42318;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 13px;
+}
