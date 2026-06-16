@@ -1,10 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\",
+  "WorkspaceRootPath": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\source\\repos\\chatting\\chatting\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\desktop\\chatting\\chatting-app\\back-end\\chatting\\chatting\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\desktop\\chatting\\chatting-app\\back-end\\chatting\\chatting\\dtos\\sendmessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\dtos\\sendmessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\desktop\\chatting\\chatting-app\\back-end\\chatting\\chatting\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\desktop\\chatting\\chatting-app\\back-end\\chatting\\chatting\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\desktop\\chatting\\chatting-app\\back-end\\chatting\\chatting\\services\\connectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\services\\connectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|c:\\users\\jamilbadenjki\\desktop\\chatting\\chatting-app\\back-end\\chatting\\chatting\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3FD8487C-A02B-48BC-B513-4EC4E3DBE375}|Chatting\\Chatting.csproj|solutionrelative:chatting\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +34,84 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Program.cs",
-              "RelativeDocumentMoniker": "Chatting\\Program.cs",
-              "ToolTip": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Program.cs",
-              "RelativeToolTip": "Chatting\\Program.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAvwCAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "SendMessageDto.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\DTOs\\SendMessageDto.cs",
+              "RelativeDocumentMoniker": "Chatting\\DTOs\\SendMessageDto.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\DTOs\\SendMessageDto.cs*",
+              "RelativeToolTip": "Chatting\\DTOs\\SendMessageDto.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-10T18:37:17.851Z",
+              "WhenOpened": "2026-06-16T23:23:17.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MessagesController.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\Controllers\\MessagesController.cs",
+              "RelativeDocumentMoniker": "Chatting\\Controllers\\MessagesController.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\Controllers\\MessagesController.cs*",
+              "RelativeToolTip": "Chatting\\Controllers\\MessagesController.cs*",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAADkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T23:11:00.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ConnectionManager.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\Services\\ConnectionManager.cs",
+              "RelativeDocumentMoniker": "Chatting\\Services\\ConnectionManager.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\Services\\ConnectionManager.cs*",
+              "RelativeToolTip": "Chatting\\Services\\ConnectionManager.cs*",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T23:16:04.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\Program.cs",
+              "RelativeDocumentMoniker": "Chatting\\Program.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\Program.cs*",
+              "RelativeToolTip": "Chatting\\Program.cs*",
+              "ViewState": "AgIAACEAAAAAAAAAAAAhwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T22:58:19.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "Chatting\\Hubs\\ChatHub.cs",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\Hubs\\ChatHub.cs*",
+              "RelativeToolTip": "Chatting\\Hubs\\ChatHub.cs*",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T22:57:23.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\appsettings.json",
+              "RelativeDocumentMoniker": "Chatting\\appsettings.json",
+              "ToolTip": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\appsettings.json",
+              "RelativeToolTip": "Chatting\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-16T22:37:01.028Z",
               "EditorCaption": ""
             }
           ]
