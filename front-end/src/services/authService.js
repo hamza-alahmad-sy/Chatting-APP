@@ -12,7 +12,7 @@ const BASE_URL = process.env.REACT_APP_API_URL || 'https://api.example.com';
 /** حفظ التوكن بغض النظر عن شكل استجابة ASP.NET */
 export function saveAuthToken(data) {
   const token = data?.token ?? data?.Token ?? data?.accessToken ?? data?.AccessToken;
-  if (token) localStorage.setItem('token', token);
+  if (token) sessionStorage.setItem('token', token);
 }
 
 /** حفظ بيانات الجلسة بعد تسجيل الدخول */
@@ -20,18 +20,18 @@ export function saveAuthSession(data) {
   saveAuthToken(data);
   const userId = data?.userId ?? data?.UserId;
   const userName = data?.userName ?? data?.UserName;
-  if (userId != null) localStorage.setItem('userId', String(userId));
-  if (userName) localStorage.setItem('userName', userName);
+  if (userId != null) sessionStorage.setItem('userId', String(userId));
+  if (userName) sessionStorage.setItem('userName', userName);
 }
 
 /** معرّف المستخدم الحالي المسجّل دخوله */
 export function getCurrentUserId() {
-  return localStorage.getItem('userId');
+  return sessionStorage.getItem('userId');
 }
 
 /** اسم المستخدم الحالي المسجّل دخوله */
 export function getCurrentUserName() {
-  return localStorage.getItem('userName');
+  return sessionStorage.getItem('userName');
 }
 
 function getInitials(name) {
@@ -57,14 +57,14 @@ export function getAuthUserProfile() {
 
 /** هل يوجد جلسة محفوظة؟ */
 export function isAuthenticated() {
-  return Boolean(localStorage.getItem('userId') || localStorage.getItem('token'));
+  return Boolean(sessionStorage.getItem('userId') || sessionStorage.getItem('token'));
 }
 
 /** مسح الجلسة عند تسجيل الخروج */
 export function clearAuthSession() {
-  localStorage.removeItem('token');
-  localStorage.removeItem('userId');
-  localStorage.removeItem('userName');
+  sessionStorage.removeItem('token');
+  sessionStorage.removeItem('userId');
+  sessionStorage.removeItem('userName');
 }
 
 /**

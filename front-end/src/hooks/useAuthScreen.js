@@ -9,6 +9,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { SCREENS, AUTH_TABS } from '../constants';
 import { isAuthenticated, clearAuthSession } from '../services/authService';
+import { stopSignalR } from '../services/signalRService';
 
 const SCREEN_EXIT_MS = 420;
 const SCREEN_ENTER_MS = 780;
@@ -77,9 +78,11 @@ export function useAuthScreen() {
 
   /** Clear session and return to the welcome screen */
   const logout = useCallback(() => {
-    clearAuthSession();
-    setTab(AUTH_TABS.SIGN_IN);
-    changeScreen(SCREENS.WELCOME);
+    stopSignalR().finally(() => {
+      clearAuthSession();
+      setTab(AUTH_TABS.SIGN_IN);
+      changeScreen(SCREENS.WELCOME);
+    });
   }, [changeScreen]);
 
   return { screen, tab, animKey, cardPhase, goToAuth, switchTab, goToChat, logout };

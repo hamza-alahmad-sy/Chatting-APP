@@ -137,7 +137,7 @@ export async function fetchMessages(chatId) {
  * @param {string} text
  * @returns {Promise<Object>}
  */
-export async function sendMessageAPI(chatId, text) {
+export async function sendMessageAPI(chatId, text, receiverId) {
   if (USE_MOCK_CHAT) {
     await sleep(300);
     return {
@@ -151,6 +151,7 @@ export async function sendMessageAPI(chatId, text) {
   const response = await api.post('/Messages', {
     chatId: Number(chatId),
     senderId: Number(getCurrentUserId()),
+    receiverId: Number(receiverId),
     messageText: text,
     messageType: 'Text',
   });
