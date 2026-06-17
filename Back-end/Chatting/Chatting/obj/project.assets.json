@@ -4165,11 +4165,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Chatting.csproj",
+      "projectUniqueName": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\Chatting.csproj",
       "projectName": "Chatting",
-      "projectPath": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\Chatting.csproj",
+      "projectPath": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\Chatting.csproj",
       "packagesPath": "C:\\Users\\JamilBadenjki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JamilBadenjki\\source\\repos\\Chatting\\Chatting\\obj\\",
+      "outputPath": "C:\\Users\\JamilBadenjki\\Desktop\\Chatting\\Chatting-APP\\Back-end\\Chatting\\Chatting\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
